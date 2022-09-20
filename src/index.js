@@ -1,7 +1,7 @@
 import createTable from './functions/createTable.js';
 import createCells from './functions/createCells.js';
 import addRandomValue from './functions/addRandomValue.js';
-import upAction from './functions/upAction.js';
+import up from './functions/actionsTypes/arrowUp/up.js';
 
 const table = document.querySelector('#table');
 const newCells = createCells();
@@ -15,7 +15,10 @@ window.addEventListener('keydown', function (e) {
   console.log(e.key)
 	switch (e.key) {
 		case 'ArrowUp':
-			upAction([...document.querySelectorAll('.active')], e.key)
+			up([...document.querySelectorAll('.active')])
+			break;
+		case 'ArrowDown':
+			downAction([...document.querySelectorAll('.active')], e.key)
 			break;
 		default:
       console.error('Wrong action')

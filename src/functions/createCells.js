@@ -1,9 +1,8 @@
 /**
- *
  * @returns html node
  */
 
-export default function createCells() {
+const createCells= () => {
 	let cells = '';
 	let rowNbr = 0;
 	let cellNbr = 1;
@@ -22,3 +21,5 @@ export default function createCells() {
 
 	return cells;
 }
+
+export default createCells
