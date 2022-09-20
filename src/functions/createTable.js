@@ -1,9 +1,8 @@
 /**
- *
  * @param {*} array
  * @returns array
  */
-export default function createTable(array) {
+ const createTable = (array) => {
 	let tableRows = [];
 	let row = [];
 
@@ -19,3 +18,5 @@ export default function createTable(array) {
 
 	return tableRows;
 }
+
+export default createTable
