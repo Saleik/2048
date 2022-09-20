@@ -5,24 +5,29 @@
  * @returns recursive function
  */
 
-const addRandomValue = (nodeArr, nbr) => {
-	let count = nbr;
+const addRandomValue = (nodesArr,count) =>{
 
-	if (count <= 0) return;
+  if (count <= 0) return;
+  let availableNodes = [];
 
-	const rand = Math.floor(Math.random() * (nodeArr.length - 1));
-	const currNode = nodeArr[rand];
-	let newNode = document.createElement('div');
-  const value = ['2', '4'][Math.floor(Math.random() * 2)]
-  console.log(value);
-	newNode.innerText = value
-	newNode.dataset.value = value;
+  //Get only available cells
+  nodesArr.forEach(node => {
+    if(!node.hasChildNodes()) availableNodes.push(node)
+  });
+
+  //get a random node
+  const rand = Math.floor(Math.random() * (availableNodes.length - 1));
+  const currNode = availableNodes[rand];
+  //And append it a new value
+  const newNode = document.createElement('div');
+	newNode.innerText = '2';
+	newNode.dataset.value = '2';
 	newNode.classList.add('active', 'scale-up-center');
 	currNode.appendChild(newNode);
 
-	count--;
+  count--;
 
-	return addRandomValue(nodeArr, count);
+  return addRandomValue(nodesArr, count)
 }
 
 export default addRandomValue

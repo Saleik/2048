@@ -6,9 +6,9 @@
  * @param {string} type
  * @returns  recursive function
  */
- const upCell = (row, col, node, type) =>{
-	if (type === 'ArrowUp' && row === 1) return;
-  console.log(type)
+ const upCell = (row, col, node) =>{
+	if(row === 1) return;
+
 	let newPos = row - 1 + '-' + col;
 	let next = document.getElementById(newPos);
 
@@ -23,13 +23,12 @@
 			node.innerText = total;
 			child.remove();
 			next.appendChild(node);
-			return;
 		} else {
 			return;
 		}
 	}
 	next.appendChild(node);
-	return upCell(row - 1, col, node, type);
+	return upCell(row - 1, col, node);
 }
 
 export default upCell
