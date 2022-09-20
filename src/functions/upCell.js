@@ -23,7 +23,7 @@
 			node.innerText = total;
 			child.remove();
 			next.appendChild(node);
-			return;
+
 		} else {
 			return;
 		}
