@@ -3,6 +3,7 @@ import createCells from './functions/createCells.js';
 import addRandomValue from './functions/addRandomValue.js';
 import up from './functions/actionsTypes/up.js';
 import down from './functions/actionsTypes/down.js';
+import left from './functions/actionsTypes/left.js';
 
 const table = document.querySelector('#table');
 const newCells = createCells();
@@ -20,6 +21,9 @@ window.addEventListener('keydown', function (e) {
 			break;
 		case 'ArrowDown':
 			down([...document.querySelectorAll('.active')], e.key)
+			break;
+		case 'ArrowLeft':
+			left([...document.querySelectorAll('.active')], e.key)
 			break;
 		default:
       console.error('Wrong action')
