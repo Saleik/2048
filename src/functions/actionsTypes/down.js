@@ -34,7 +34,7 @@ const moveDown = (row, col, node) => {
 }
 
 const down = (active) =>{
-  for(const cell of active){
+  for(const cell of active.reverse()){
     let row = cell.parentNode.id.split('-')[0];
 		let col = cell.parentNode.id.split('-')[1];
     if (row < 4 ) {
