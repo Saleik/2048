@@ -1,10 +1,9 @@
-import { cellsArray } from '../../../index.js';
-import addRandomValue from '../../addRandomValue.js';
+import { cellsArray } from '../../index.js';
+import addRandomValue from '../addRandomValue.js';
 /**
  * @param {int} row
  * @param {int} col
  * @param {Node} node
- * @param {string} type
  * @returns  recursive function
  */
  const moveUp = (row, col, node) =>{
