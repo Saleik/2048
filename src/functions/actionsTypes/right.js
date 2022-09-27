@@ -7,10 +7,10 @@ import addRandomValue from '../addRandomValue.js';
  * @param {Node} node
  * @returns recursive function
  */
-const moveLeft = (row, col, node) => {
-  if(col === 1 ) return;
+const moveRight = (row, col, node) => {
+  if(col === 4 ) return;
 
-  let newPos = row + '-' + (col - 1);
+  let newPos = row + '-' + (parseInt(col) + 1);
 	let next = document.getElementById(newPos);
 
   if (next.hasChildNodes()) {
@@ -24,23 +24,25 @@ const moveLeft = (row, col, node) => {
 			node.innerText = total;
 			child.remove();
 			next.appendChild(node);
+      return
 		} else {
 			return;
 		}
 	}
   next.appendChild(node);
-	return moveLeft(row , col - 1, node);
+	return moveRight(row , (parseInt(col) + 1), node);
 }
 
-const left = (active) =>{
-  for(const cell of active){
-    let row = cell.parentNode.id.split('-')[0];
-		let col = cell.parentNode.id.split('-')[1];
-    if (col > 1 ) {
-			moveLeft(row, col, cell);
+const right = (active) =>{
+  for(const cell of active.reverse()){
+    const rowAndCol = cell.parentNode.id.split('-');
+    let row = rowAndCol[0];
+		let col = rowAndCol[1];
+    if (col < 4 ) {
+			moveRight(row, col, cell);
 		}
   }
   addRandomValue(cellsArray, 1)
 }
 
-export default left
+export default right
