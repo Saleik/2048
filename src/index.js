@@ -5,6 +5,7 @@ import up from './functions/actionsTypes/up.js';
 import down from './functions/actionsTypes/down.js';
 import left from './functions/actionsTypes/left.js';
 import right from './functions/actionsTypes/right.js';
+import { score } from './functions/score.js';
 
 const table = document.querySelector('#table');
 const newCells = createCells();
@@ -32,3 +33,6 @@ window.addEventListener('keydown', function (e) {
       alert('Wrong action! Please use arrow keyboard')
 	}
 });
+
+//test area
+score([...document.querySelectorAll('.active')]);
