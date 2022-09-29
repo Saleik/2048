@@ -38,7 +38,7 @@ const moveDown = (row, col, node) => {
 
   node.classList.add('scale-up-center')
   next.appendChild(node);
-	return moveDown(parseInt(row) + parseInt(1), col, node);
+	return moveDown(parseInt(row) + 1, col, node);
 }
 
 const down = (active) =>{

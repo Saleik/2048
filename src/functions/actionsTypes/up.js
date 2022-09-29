@@ -7,7 +7,10 @@ import score from '../score.js';
  * @param {Node} node
  * @returns  recursive function
  */
+let nbrMove = 0;
+
  const moveUp = (row, col, node) =>{
+
 	if(row === 1) return;
   let count = 0;
 	let newPos = row - 1 + '-' + col;
@@ -27,6 +30,7 @@ import score from '../score.js';
 			child.remove();
 			next.appendChild(node);
       score(total);
+      nbrMove++
       count++;
       return;
 		} else {
@@ -35,6 +39,7 @@ import score from '../score.js';
 	}
   node.classList.add('scale-up-center')
 	next.appendChild(node);
+  nbrMove++
 	return moveUp(row - 1, col, node);
 }
 
@@ -49,7 +54,10 @@ const up = (active) => {
 			moveUp(row, col, cell);
 		}
 	}
-  addRandomValue(cellsArray, 1)
+  if(nbrMove > 0){
+    addRandomValue(cellsArray, 1);
+    nbrMove = 0;
+  }
 }
 
 export default up

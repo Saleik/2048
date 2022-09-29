@@ -15,6 +15,7 @@ const addRandomValue = (nodesArr,count) =>{
     if(!node.hasChildNodes()) availableNodes.push(node)
   });
 
+  if(!availableNodes.length) return false
   //get a random node
   const rand = Math.floor(Math.random() * (availableNodes.length - 1));
   const currNode = availableNodes[rand];

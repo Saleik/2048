@@ -6,6 +6,7 @@ import down from './functions/actionsTypes/down.js';
 import left from './functions/actionsTypes/left.js';
 import right from './functions/actionsTypes/right.js';
 import hasWon from './functions/hasWon.js';
+import oneByOne from './functions/actionsTypes/moveCell.js';
 
 const table = document.querySelector('#table');
 const newCells = createCells();
@@ -20,19 +21,19 @@ window.addEventListener('keydown', function (e) {
   hasWon(parseInt(document.querySelector('#total').dataset.total))
 	switch (e.key) {
 		case 'ArrowUp':
-			up([...document.querySelectorAll('.active')])
+			oneByOne([...document.querySelectorAll('.active')], e.key);
 			break;
 		case 'ArrowDown':
-			down([...document.querySelectorAll('.active')])
+			oneByOne([...document.querySelectorAll('.active')], e.key);
 			break;
 		case 'ArrowLeft':
-			left([...document.querySelectorAll('.active')])
+			left([...document.querySelectorAll('.active')]);
 			break;
 		case 'ArrowRight':
-			right([...document.querySelectorAll('.active')])
+			right([...document.querySelectorAll('.active')]);
 			break;
 		default:
-      alert('Wrong action! Please use arrow keyboard')
+      alert('Wrong action! Please use arrow keyboard');
 	}
 });
 
