@@ -60,9 +60,6 @@ body {
 	color: var(--font-color);
 }
 
-.title h1{
-  margin: 0;
-}
 .wrapperTable {
 	margin: 0 auto;
 }
@@ -119,13 +116,14 @@ body {
 	-ms-border-radius: var(--border-radius);
 	-o-border-radius: var(--border-radius);
 }
-.score-board{
-  width:100%;
-  padding: 2rem 0 .4rem 0;
-  text-align: end;
-}
-.score-board span{
-  padding: .5rem 2rem;
+.score-board {
+  font-size: 1.5rem;
+  margin-bottom: -.5rem;
+  text-align: center;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: .5rem .5rem;
   border: solid .5rem var(--background-grid);
   font-family: var(--font-cartoon);
   color: var(--font-color);
@@ -135,7 +133,130 @@ body {
   -ms-border-radius: 10px 10px 0 0;
   -o-border-radius: 10px 10px 0 0;
 }
+
+.score-board h2{
+  margin:0;
+  font-size: 1.5rem;
+}
+
 /**
+ * On score update
+ * ----------------------------------------
+ * animation bounce-top
+ * ----------------------------------------
+ */
+ .bounce-top {
+	-webkit-animation: bounce-top 0.9s both;
+	        animation: bounce-top 0.9s both;
+}
+
+ @-webkit-keyframes bounce-top {
+  0% {
+    -webkit-transform: translateY(-45px);
+            transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    -webkit-transform: translateY(-24px);
+            transform: translateY(-24px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  65% {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  82% {
+    -webkit-transform: translateY(-6px);
+            transform: translateY(-6px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  93% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+@keyframes bounce-top {
+  0% {
+    -webkit-transform: translateY(-45px);
+            transform: translateY(-45px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    -webkit-transform: translateY(-24px);
+            transform: translateY(-24px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  65% {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  82% {
+    -webkit-transform: translateY(-6px);
+            transform: translateY(-6px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  93% {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+
+/**
+* On tiles pop
 * ----------------------------------------
 * animation scale-up-center
 * ----------------------------------------
@@ -170,6 +291,7 @@ body {
 
 
 /**
+* On tiles addition on vertical move
 * ----------------------------------------
 * animation flip-scale-up-hor
 * ----------------------------------------
@@ -211,6 +333,7 @@ body {
 
 
 /**
+* On tiles addition on horizontal move
 * ----------------------------------------
 * animation flip-scale-up-ver
 * ----------------------------------------

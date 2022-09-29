@@ -1,6 +1,7 @@
-export const score = (cellsActiveArray)=>{
-  const container = document.querySelector('#score-board');
-  const values = cellsActiveArray.map(cell => parseInt(cell.dataset.value))
-
-  console.log(values.reduce((prev, curr)=> prev + curr));
+const score = (value)=>{
+  const totalContainer = document.querySelector('#total');
+  totalContainer.dataset.total = parseInt(totalContainer.dataset.total) + value
+  totalContainer.innerHTML = totalContainer.dataset.total;
 }
+
+export default score;
