@@ -1,5 +1,6 @@
 import { cellsArray } from '../../index.js';
 import addRandomValue from '../addRandomValue.js';
+import score from '../score.js';
 /**
  * @param {int} row
  * @param {int} col
@@ -25,7 +26,8 @@ import addRandomValue from '../addRandomValue.js';
       node.classList.add('flip-scale-up-hor');
 			child.remove();
 			next.appendChild(node);
-      count++
+      score(total);
+      count++;
       return;
 		} else {
 			return;

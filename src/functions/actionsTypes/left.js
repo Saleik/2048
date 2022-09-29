@@ -1,5 +1,6 @@
 import { cellsArray } from '../../index.js';
 import addRandomValue from '../addRandomValue.js';
+import score from '../score.js';
 /**
  *
  * @param {int} row
@@ -25,6 +26,7 @@ const moveLeft = (row, col, node) => {
       node.classList.add('flip-scale-up-ver')
 			child.remove();
 			next.appendChild(node);
+      score(total);
       count++
       return;
 		} else {
