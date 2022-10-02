@@ -55,8 +55,6 @@ const addition = (next, curr, count) =>{
 }
 
 const domUpdate = (target, curr, next = '', total = 0) =>{
-  curr.classList.remove('scale-up-center', 'flip-scale-up-hor')
-  curr.offsetHeight
   if(next !== '' && total > 0){
     curr.dataset.value = total;
     curr.innerText = total;
@@ -68,6 +66,7 @@ const domUpdate = (target, curr, next = '', total = 0) =>{
 	  target.appendChild(curr);
   }
 }
+
 
 const cellOneByOne = (actives, action) =>{
   for (const cell of actives) {

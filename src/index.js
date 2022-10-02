@@ -1,8 +1,6 @@
 import createTable from './functions/createTable.js';
 import createCells from './functions/createCells.js';
 import addRandomValue from './functions/addRandomValue.js';
-import left from './functions/actionsTypes/left.js';
-import right from './functions/actionsTypes/right.js';
 import hasWon from './functions/hasWon.js';
 import cellOneByOne from './functions/actionsTypes/moveCell.js';
 
@@ -18,6 +16,10 @@ const GRID = createTable(cellsArray);
 window.addEventListener('keydown', function (e) {
   hasWon(parseInt(document.querySelector('#total').dataset.total))
   const activesCells = [...document.querySelectorAll('.active')];
+  activesCells.forEach((c) => {
+    c.classList.remove('scale-up-center', 'flip-scale-up-hor');
+    void c.offsetWidth;
+  });
 
   if(e.key === 'ArrowDown' || e.key === 'ArrowRight'){
     cellOneByOne([...document.querySelectorAll('.active')].reverse(), e.key)
