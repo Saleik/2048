@@ -4,15 +4,18 @@ import score from '../score.js';
 
 let nbrMovesCell = 0
 
-const move = (row, col, cell, action) =>{
+const move = (row, col, cell, action, operator = '+') =>{
   if(!isValid(row, col, action)) return;
   let count = 0;
-	const newPos = row - 1 + '-' + col;
-	const target = document.getElementById(newPos);
-
-  if(cell.className.includes('flip-scale-up-hor') || cell.className.includes('flip-scale-up-ver')){
-    cell.classList.remove('flip-scale-up-hor','flip-scale-up-ver')
+  const next = ()=> {
+    if(action === 'ArrowUp' || action === 'ArrowDown') return operator === '-' ? row - 1 : parseInt(row) + 1;
+    else return operator === '-' ? col - 1 : parseInt(col) + 1;
   }
+
+	const newPos = action === 'ArrowUp' || action === 'ArrowDown'
+  ? next() + '-' + col
+  : row +'-'+ next();
+	const target = document.getElementById(newPos);
 
   if(target.hasChildNodes()){
     let child = target.firstChild;
@@ -25,53 +28,53 @@ const move = (row, col, cell, action) =>{
       ;
     }
   }
-
   domUpdate(target, cell), nbrMovesCell++;
 
-  switch(action) {
-    case 'ArrowUp':
-       return move(row - 1, col, cell, action);
-    case 'ArrowDown':
-       return move(row + 1, col, cell, action);
-  }
+  if(action === 'ArrowUp' || action === 'ArrowDown') return move(next(), col, cell, action, operator);
+  else return move(row, next(), cell, action, operator);
 }
 
 const isValid = (row, col, action) =>{
-  console.log(action)
   switch (action) {
     case 'ArrowUp':
       return row > 1;
     case 'ArrowDown':
       return row < 4;
+    case 'ArrowLeft':
+      return col > 1;
+    case 'ArrowRight':
+      return col < 4;
   }
 }
 
 const addition = (next, curr, count) =>{
   const nextToNumber = parseInt(next.dataset.value);
   const currToNumber = parseInt(curr.dataset.value);
-  if(nextToNumber === currToNumber && count <= 0) return currToNumber + nextToNumber
+  if(nextToNumber === currToNumber && count <= 0) return currToNumber + nextToNumber;
   else return false;
 }
 
 const domUpdate = (target, curr, next = '', total = 0) =>{
+  curr.classList.remove('scale-up-center', 'flip-scale-up-hor')
+  curr.offsetHeight
   if(next !== '' && total > 0){
     curr.dataset.value = total;
     curr.innerText = total;
-    curr.classList.remove('scale-up-center');
     curr.classList.add('flip-scale-up-hor');
-    next.remove();
+    next.remove()
     target.appendChild(curr);
   }else{
-    curr.classList.add('scale-up-center')
+    curr.classList.add('scale-up-center');
 	  target.appendChild(curr);
   }
 }
 
-const oneByOne = (active, action) =>{
-  for (const cell of active) {
+const cellOneByOne = (actives, action) =>{
+  for (const cell of actives) {
 		let row = cell.parentNode.id.split('-')[0];
 		let col = cell.parentNode.id.split('-')[1];
-		move(row, col, cell, action);
+    if(action === 'ArrowUp' || action === 'ArrowLeft') move(row, col, cell, action, '-');
+		else move(row, col, cell, action);
 	}
   if(nbrMovesCell > 0){
     addRandomValue(cellsArray, 1);
@@ -79,4 +82,4 @@ const oneByOne = (active, action) =>{
   }
 }
 
-export default oneByOne;
+export default cellOneByOne;
