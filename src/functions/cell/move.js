@@ -1,4 +1,4 @@
-import { cellsArray } from '../../index.js';
+import { tilesArray } from '../../index.js';
 import addRandomValue from './addRandomValue.js';
 import domUpdate from './domUpdate.js';
 import score from '../score/score.js';
@@ -7,7 +7,7 @@ import isValid from './isValid.js'
 let nbrMovesCell = 0;
 let count = 0;
 /**
- *
+ *Manage addition and movements cells on the grid
  * @param {int} row
  * @param {int} col
  * @param {HTMLElement} cell
@@ -60,7 +60,7 @@ const oneByOne = (actives, action) =>{
     count = 0;
 	}
   if(nbrMovesCell > 0){
-    addRandomValue(cellsArray, 1);
+    addRandomValue(tilesArray, 1);
     nbrMovesCell = 0;
   }
 }

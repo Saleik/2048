@@ -1,3 +1,10 @@
+/**
+ * validator to check if recursive func move can continue to run
+ * @param {int} row
+ * @param {int} col
+ * @param {string} action
+ * @returns
+ */
 const isValid = (row, col, action) =>{
   switch (action) {
     case 'ArrowUp':
