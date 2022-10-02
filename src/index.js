@@ -1,10 +1,8 @@
-import createTable from './functions/createTable.js';
-import createCells from './functions/createCells.js';
-import addRandomValue from './functions/addRandomValue.js';
-import left from './functions/actionsTypes/left.js';
-import right from './functions/actionsTypes/right.js';
-import hasWon from './functions/hasWon.js';
-import cellOneByOne from './functions/actionsTypes/moveCell.js';
+import createTable from './functions/grid/createTable.js';
+import createCells from './functions/grid/createCells.js';
+import addRandomValue from './functions/cell/addRandomValue.js';
+import hasWon from './functions/score/hasWon.js';
+import oneByOne from './functions/cell/move.js';
 
 const table = document.querySelector('#table');
 const newCells = createCells();
@@ -18,10 +16,14 @@ const GRID = createTable(cellsArray);
 window.addEventListener('keydown', function (e) {
   hasWon(parseInt(document.querySelector('#total').dataset.total))
   const activesCells = [...document.querySelectorAll('.active')];
+  activesCells.forEach((c) => {
+    c.classList.remove('scale-up-center', 'flip-scale-up-hor');
+    void c.offsetWidth;
+  });
 
   if(e.key === 'ArrowDown' || e.key === 'ArrowRight'){
-    cellOneByOne([...document.querySelectorAll('.active')].reverse(), e.key)
+    oneByOne([...document.querySelectorAll('.active')].reverse(), e.key)
   } else{
-    cellOneByOne(activesCells, e.key)
+    oneByOne(activesCells, e.key)
   }
 });
