@@ -1,5 +1,5 @@
 /**
- * @param {*} array
+ * @param {array} array
  * @returns array
  */
  const createTable = (array) => {

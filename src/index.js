@@ -1,18 +1,19 @@
 import createTable from './functions/grid/createTable.js';
-import createCells from './functions/grid/createCells.js';
+import createTiles from './functions/grid/createTiles.js';
 import addRandomValue from './functions/cell/addRandomValue.js';
 import hasWon from './functions/score/hasWon.js';
 import oneByOne from './functions/cell/move.js';
 
 const table = document.querySelector('#table');
-const newCells = createCells();
+const newTiles = createTiles();
 
-table.innerHTML = newCells;
+table.innerHTML = newTiles;
 //variables globals
-export const cellsArray = [...document.querySelectorAll('.cell')];
+export const tilesArray = [...document.querySelectorAll('.tile')];
 
-addRandomValue(cellsArray, 2);
-const GRID = createTable(cellsArray);
+//TODO:wip in hasWon function
+addRandomValue(tilesArray, 16);
+const GRID = createTable(tilesArray);
 window.addEventListener('keydown', function (e) {
   hasWon(parseInt(document.querySelector('#total').dataset.total))
   const activesCells = [...document.querySelectorAll('.active')];

@@ -78,7 +78,7 @@ body {
 	-o-border-radius: var(--border-radius);
 }
 
-.cell {
+.tile {
 	font-family: var(--font-cartoon);
 	background-color: var(--background-color-tiles);
 	transition: 1s;

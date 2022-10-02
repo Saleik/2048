@@ -21,8 +21,12 @@ const addRandomValue = (nodesArr,count) =>{
   const currNode = availableNodes[rand];
   //And append it a new value
   const newNode = document.createElement('div');
-	newNode.innerText = '2';
-	newNode.dataset.value = '2';
+  const randomValue = Math.floor(Math.random()* (128 - 2) + 2)
+  newNode.innerText = randomValue.toString();
+	newNode.dataset.value = randomValue;
+  //TODO:wip in hasWon function
+	// newNode.innerText = '2';
+	// newNode.dataset.value = '2';
 	newNode.classList.add('active', 'scale-up-center');
 	currNode.appendChild(newNode);
 
