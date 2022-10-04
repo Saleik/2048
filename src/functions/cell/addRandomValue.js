@@ -4,6 +4,8 @@
  * @param {Int} count
  * @returns {Self}
  */
+const VALUES = ['2', '4'];
+
 const addRandomValue = (nodesArr,count) =>{
 
   if (count <= 0) return;
@@ -20,12 +22,9 @@ const addRandomValue = (nodesArr,count) =>{
   const currNode = availableNodes[rand];
   //And append it a new value
   const newNode = document.createElement('div');
-  const randomValue = Math.floor(Math.random()* (10 - 2) + 2)
-  newNode.innerText = randomValue.toString();
+  const randomValue = VALUES[Math.floor(Math.random() * VALUES.length)];
+	newNode.innerText = randomValue;
 	newNode.dataset.value = randomValue;
-  //TODO:wip in hasWon function
-	// newNode.innerText = '2';
-	// newNode.dataset.value = '2';
 	newNode.classList.add('active', 'scale-up-center');
 	currNode.appendChild(newNode);
 

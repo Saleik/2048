@@ -10,9 +10,7 @@ const newTiles = createTiles();
 table.innerHTML = newTiles;
 //variables globals
 export const tilesArray = [...document.querySelectorAll('.tile')];
-
-//TODO:wip in hasWon function
-addRandomValue(tilesArray, 16);
+addRandomValue(tilesArray, 2);
 const GRID = createTable(tilesArray);
 window.addEventListener('keydown', function (e) {
   hasWon(parseInt(document.querySelector('#total').dataset.total))
