@@ -1,6 +1,6 @@
 /**
- * @param {array} array
- * @returns array
+ * @param {Array} array
+ * @returns {Array}
  */
  const createTable = (array) => {
 	let tableRows = [];

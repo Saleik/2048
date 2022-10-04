@@ -1,5 +1,5 @@
 /**
- * @returns HTML String
+ * @returns {String}
  */
 
 const createTiles= () => {

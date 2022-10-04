@@ -1,10 +1,9 @@
 /**
- * Add the value 2 to two random boxes at the beginning
- * @param {*} nodeList
- * @param {*} nbr
- * @returns recursive function
+ * Add 2 random cells at the start
+ * @param {HTMLAllCollection} nodeList
+ * @param {Int} count
+ * @returns {Self}
  */
-
 const addRandomValue = (nodesArr,count) =>{
 
   if (count <= 0) return;
@@ -21,7 +20,7 @@ const addRandomValue = (nodesArr,count) =>{
   const currNode = availableNodes[rand];
   //And append it a new value
   const newNode = document.createElement('div');
-  const randomValue = Math.floor(Math.random()* (128 - 2) + 2)
+  const randomValue = Math.floor(Math.random()* (10 - 2) + 2)
   newNode.innerText = randomValue.toString();
 	newNode.dataset.value = randomValue;
   //TODO:wip in hasWon function
