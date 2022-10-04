@@ -13,7 +13,7 @@ let count = 0;
  * @param {HTMLElement} cell
  * @param {string} action
  * @param {string} operator
- * @returns recursive function
+ * @returns {Self}
  */
 const move = (row, col, cell, action, operator = '+') =>{
   if(!isValid(row, col, action)) return;

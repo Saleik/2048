@@ -3,7 +3,7 @@
  * @param {int} row
  * @param {int} col
  * @param {string} action
- * @returns
+ * @returns {Boolean}
  */
 const isValid = (row, col, action) =>{
   switch (action) {
