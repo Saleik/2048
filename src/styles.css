@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 :root {
 	--gap-space: 0.5rem;
 	--font-cartoon: 'Bangers', cursive;
-	--font-color: #ef7b45;
+  --font-text:'Open Sans', sans-serif;
+	--font-cartoon-color: #ef7b45;
+  --font-color: #ffff;
 	--border-radius: 0.25rem;
   --background-color-tiles: #8BDEDF;
   --background-color-active-tiles: #2C5364;
@@ -42,13 +45,10 @@ body {
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-body{
-  height: 100vh;
-}
+
 
 .container {
-	height: 100%;
-	width: 100%;
+
 	display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,11 +59,33 @@ body{
 	font-family: var(--font-cartoon);
 	text-align: center;
 	width: 100%;
-	color: var(--font-color);
+	color: var(--font-cartoon-color);
 }
 
+.title > p {
+  color:#ffff;
+  font-family: var(--font-text);
+}
+
+b{
+  color: var(--font-cartoon-color)
+}
+
+.rules{
+  font-family: var(--font-text);
+  color: var(--font-color);
+}
+
+i{
+  font-family: var(--font-text);
+  color: var(--font-color);
+}
 .wrapperTable {
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
+}
+
+.wrapper-scores{
+  display: flex;
 }
 
 .table {
@@ -103,7 +125,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: var(--font-color);
+	color: var(--font-cartoon-color);
 	background-color: var(--background-color-active-tiles);
 	transition: 0.5s;
 	width: 100%;
@@ -128,7 +150,7 @@ body{
   padding: .5rem .5rem;
   border: solid .5rem var(--background-grid);
   font-family: var(--font-cartoon);
-  color: var(--font-color);
+  color: var(--font-cartoon-color);
   border-radius: 10px 10px 0 0;
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
@@ -138,7 +160,7 @@ body{
 
 .score-board h2{
   margin:0;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 /**

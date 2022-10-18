@@ -22,7 +22,9 @@ const addRandomValue = (nodesArr,count) =>{
   const currNode = availableNodes[rand];
   //And append it a new value
   const newNode = document.createElement('div');
+  //TODO: wip 2048 tuiles
   const randomValue = VALUES[Math.floor(Math.random() * VALUES.length)];
+  // const randomValue = 2048;
 	newNode.innerText = randomValue;
 	newNode.dataset.value = randomValue;
 	newNode.classList.add('active', 'scale-up-center');
