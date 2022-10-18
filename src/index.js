@@ -18,6 +18,9 @@ createTable(tilesArray);
 if (localStorage.getItem('best-score')) bestScore()
 
 window.addEventListener('keydown', function (e) {
+
+  if(["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.code)) e.preventDefault()
+
   hasWon(parseInt(document.querySelector('#total').dataset.total))
   const activesCells = [...document.querySelectorAll('.active')];
   activesCells.forEach((c) => {
