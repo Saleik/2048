@@ -3,6 +3,7 @@ import createTiles from './functions/grid/createTiles.js';
 import addRandomValue from './functions/cell/addRandomValue.js';
 import hasWon from './functions/score/hasWon.js';
 import oneByOne from './functions/cell/move.js';
+import bestScore from './functions/score/bestScore.js';
 
 const table = document.querySelector('#table');
 const newTiles = createTiles();
@@ -10,8 +11,12 @@ const newTiles = createTiles();
 table.innerHTML = newTiles;
 //variables globals
 export const tilesArray = [...document.querySelectorAll('.tile')];
+
 addRandomValue(tilesArray, 2);
-const GRID = createTable(tilesArray);
+createTable(tilesArray);
+
+if (localStorage.getItem('best-score')) bestScore()
+
 window.addEventListener('keydown', function (e) {
   hasWon(parseInt(document.querySelector('#total').dataset.total))
   const activesCells = [...document.querySelectorAll('.active')];

@@ -2,11 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/styles.css">
-    <title>2048</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="src/favicon.png">
+  <link rel="stylesheet" href="src/styles.css">
+  <!-- Primary Meta Tags -->
+  <title>2048 game | by KS</title>
+  <meta name="title" content="2048 game | by KS">
+  <meta name="description" content="Come take some fun on my 2048 game, maybe you can win...or not :p">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://2048.sarrazin-kevin.fr">
+  <meta property="og:title" content="2048 game | by KS">
+  <meta property="og:description" content="Come take some fun on my 2048 game, maybe you can win...or not :p">
+  <meta property="og:image" content="src/favicon.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://2048.sarrazin-kevin.fr">
+  <meta property="twitter:title" content="2048 game | by KS">
+  <meta property="twitter:description" content="Come take some fun on my 2048 game, maybe you can win...or not :p">
+  <meta property="twitter:image" content="src/favicon.png">
 </head>
 
 <body>
@@ -15,14 +33,26 @@
           <h1>
               2048 Game
           </h1>
+          <p>Connect the numbers and get tile <span><b>2048!</b></span></p>
       </div>
       <div class="wrapperTable">
-        <div id="score-board" class="score-board">
+        <div class="wrapper-scores">
+          <div id="score-board" class="score-board">
             <h2>score:</h2>
             <span id="total" data-total="0">0</span>
+          </div>
+          <div class="score-board">
+            <h2>Best Score:</h2>
+            <span id="best" data-best="0">0</span>
+          </div>
         </div>
-          <div class="table" id="table"></div>
+        <div class="table" id="table"></div>
       </div>
+      <pre class="rules">
+        <b>HOW TO PLAY:</b> Use the keyboard arrows to move the tiles.
+        When two tiles with the same number touch, <b>they merge!</b>
+      </pre>
+      <i>Original inventor of the game is Gabriele Cirulli. under free license MIT.</i>
   </div>
   <script type="module" src="src/index.js"></script>
 </body>
