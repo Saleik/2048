@@ -9,7 +9,7 @@ const table = document.querySelector('#table');
 const newTiles = createTiles();
 
 table.innerHTML = newTiles;
-//variables globals
+
 export const tilesArray = [...document.querySelectorAll('.tile')];
 
 addRandomValue(tilesArray, 2);
