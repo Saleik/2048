@@ -13,6 +13,11 @@ const hasWon = (total)=>{
   if(cells.filter(c => +c.dataset.value === 2048).length > 0) scoreBoard('You Win Gratz Folks!!!🥳', total)
 }
 
+/**
+ * Store in user localStorage  and set ending message
+ * @param {string, int}
+ * @returns {String}
+ */
 const scoreBoard = (message, total) =>{
   const bestScore = localStorage.getItem('best-score') ?? null
   if(!bestScore || bestScore < total) localStorage.setItem('best-score', total)

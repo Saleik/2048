@@ -58,7 +58,6 @@ body {
 .title {
 	font-family: var(--font-cartoon);
 	text-align: center;
-	width: 100%;
 	color: var(--font-cartoon-color);
 }
 
@@ -72,13 +71,19 @@ b{
 }
 
 .rules{
-  font-family: var(--font-text);
   color: var(--font-color);
+  text-align: center;
+  width:30rem;
+}
+.rules > p {
+  font-family: var(--font-text);
 }
 
-i{
+.rules > i{
   font-family: var(--font-text);
   color: var(--font-color);
+  padding-bottom: 2rem;
+  font-size: .7rem;
 }
 .wrapperTable {
   margin-bottom: 1rem;
