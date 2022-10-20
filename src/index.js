@@ -4,6 +4,17 @@ import addRandomValue from './functions/cell/addRandomValue.js';
 import hasWon from './functions/score/hasWon.js';
 import oneByOne from './functions/cell/move.js';
 import bestScore from './functions/score/bestScore.js';
+import {
+  isMobile,
+  touchEndHandler,
+  touchStartHandler
+} from './functions/mobileControllers/isMobile.js';
+
+if(isMobile()){
+  const grid = document.querySelector('#table')
+  document.addEventListener("touchstart", touchStartHandler);
+  document.addEventListener("touchend", touchEndHandler);
+}
 
 const table = document.querySelector('#table');
 const newTiles = createTiles();
@@ -14,7 +25,6 @@ export const tilesArray = [...document.querySelectorAll('.tile')];
 
 addRandomValue(tilesArray, 2);
 createTable(tilesArray);
-
 if (localStorage.getItem('best-score')) bestScore()
 
 window.addEventListener('keydown', function (e) {
