@@ -15,7 +15,6 @@ const touchStartHandler = (e) => {
     x: e.touches[0].pageX,
     y: e.touches[0].pageY
   }
-  console.log(start);
 }
 
 const touchEndHandler = (e) => {

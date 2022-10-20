@@ -32,13 +32,14 @@ const move = (row, col, cell, action, operator = '+') =>{
     const total = addition(child, cell);
     if(total){
       domUpdate(target,cell, child, total);
-      score(total), nbrMovesCell++, count++;
+      score(total), nbrMovesCell++;
+      count++;
     }else{
       return;
-      ;
     }
+  }else{
+    domUpdate(target, cell), nbrMovesCell++;
   }
-  domUpdate(target, cell), nbrMovesCell++;
 
   if(action === 'ArrowUp' || action === 'ArrowDown') return move(next(), col, cell, action, operator);
   else return move(row, next(), cell, action, operator);
@@ -47,8 +48,11 @@ const move = (row, col, cell, action, operator = '+') =>{
 const addition = (next, curr) =>{
   const nextToNumber = parseInt(next.dataset.value);
   const currToNumber = parseInt(curr.dataset.value);
-  if(nextToNumber === currToNumber && count <= 0) return currToNumber + nextToNumber;
-  else return false;
+  if(nextToNumber === currToNumber && count <= 0){
+    return currToNumber + nextToNumber;
+  }else{
+    return false;
+  }
 }
 
 const oneByOne = (actives, action) =>{
@@ -59,6 +63,7 @@ const oneByOne = (actives, action) =>{
 		else move(row, col, cell, action);
     count = 0;
 	}
+
   if(nbrMovesCell > 0){
     addRandomValue(tilesArray, 1);
     nbrMovesCell = 0;
