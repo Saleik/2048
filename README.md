@@ -1,5 +1,5 @@
 
-# 2048 game (JS-ES6) => WIP
+# 2048 game (JS-ES6)
 
 Reproduction of 2048 game in functional programming paradigm, no packages.
 
