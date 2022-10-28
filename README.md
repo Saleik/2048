@@ -1,8 +1,7 @@
 
 # 2048 game (JS-ES6)
 
-Reproduction of 2048 game in functional programming paradigm, no packages.
-
+Reproduction of [2048](https://2048.sarrazin-kevin.fr/) game in functional programming paradigm, no packages.
 
 ## Run Locally
 
